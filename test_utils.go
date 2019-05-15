@@ -51,7 +51,7 @@ var (
 		0x6a, 0x49, 0x18, 0x83, 0x31, 0x98, 0x47, 0x53,
 	}
 
-	// Just use some arbitrary bytes as delivery script.
+	// some arbitrary bytes as delivery script.
 	dummyDeliveryScript = alicesPrivKey[:]
 
 	// testTx is used as the default funding txn for single-funder channels.
@@ -91,6 +91,7 @@ var (
 
 // createTestPeer creates a channel between two nodes, and returns a peer for
 // one of the nodes, together with the channel seen from both nodes.
+// the nodes are definded in the func
 func createTestPeer(notifier chainntnfs.ChainNotifier,
 	publTx chan *wire.MsgTx) (*peer, *lnwallet.LightningChannel,
 	*lnwallet.LightningChannel, func(), error) {
